@@ -1,0 +1,2 @@
+/** Forwards rejected controller promises to Express error middleware. */
+export const asyncHandler = (handler) => (req, res, next) => Promise.resolve(handler(req, res, next)).catch(next);

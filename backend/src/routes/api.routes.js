@@ -1,0 +1,12 @@
+import { Router } from 'express';
+import { scanUrl, scanFile, analysis } from '../controllers/scan.controller.js';
+import { health } from '../controllers/health.controller.js';
+import { validateUrl } from '../validators/scan.validators.js';
+import { upload, validateFile } from '../middleware/upload.js';
+import { urlLimiter, fileLimiter } from '../middleware/rate-limit.js';
+const router = Router();
+router.get('/health', health);
+router.post('/url', urlLimiter, validateUrl, scanUrl);
+router.post('/file', fileLimiter, upload, validateFile, scanFile);
+router.get('/analysis/:analysisId', analysis);
+export default router;

@@ -1,0 +1,23 @@
+{
+  "name": "safeguard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SafeGuard is a URL and file security analysis application powered by VirusTotal.",
+  "scripts": {
+    "setup": "npm install",
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "check": "npm run check --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

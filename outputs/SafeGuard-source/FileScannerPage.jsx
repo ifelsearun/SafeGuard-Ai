@@ -1,0 +1,2 @@
+import { FileScanForm } from '../components/ScanForm.jsx';
+export default function FileScannerPage() { return <div className="mx-auto max-w-3xl"><p className="eyebrow">File scanner</p><h1 className="page-title">Inspect a file before you open it.</h1><p className="page-description">Upload one file for analysis. Do not upload confidential content unless you understand VirusTotal’s data handling policies.</p><div className="mt-8"><FileScanForm /></div></div>; }
